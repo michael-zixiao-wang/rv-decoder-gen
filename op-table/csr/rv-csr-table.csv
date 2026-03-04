@@ -1,0 +1,55 @@
+set name,csr name,addr,legal_csr_w
+RV32 CSR,mstatus,0x300,1
+RV32 CSR,mie,0x304,1
+RV32 CSR,mtvec,0x305,1
+RV32 CSR,mscratch,0x340,1
+RV32 CSR,mepc,0x341,1
+RV32 CSR,mcause,0x342,1
+RV32 CSR,mtval,0x343,1
+RV32 CSR,mip,0x344,1
+RV32 CSR,mcounteren,0x306,1
+RV32 CSR,mcountinhibit,0x320,1
+RV32 CSR,menvcfg,0x30a,1
+RV32 CSR,sstatus,0x100,1
+RV32 CSR,sie,0x104,1
+RV32 CSR,stvec,0x105,1
+RV32 CSR,sscratch,0x140,1
+RV32 CSR,sepc,0x141,1
+RV32 CSR,scause,0x142,1
+RV32 CSR,stval,0x143,1
+RV32 CSR,sip,0x144,1
+RV32 CSR,satp,0x180,1
+RV32 CSR,stimecmp,0x14d,1
+RV32 CSR,scounteren,0x106,1
+RV32 CSR,senvcfg,0x10a,1
+RV32 CSR,mvendorid,0xf11,1
+RV32 CSR,marchid,0xf12,1
+RV32 CSR,mimpid,0xf13,1
+RV32 CSR,mhartid,0xf14,1
+RV32 CSR,misa,0x301,1
+RV32 CSR,medeleg,0x302,1
+RV32 CSR,mideleg,0x303,1
+RV32 CSR,mtime,0xc01,1
+RV32 CSR,mtimecmp,0x7c0,1
+RV32 CSR,cycle,0xc00,1
+RV32 CSR,time,0xc01,1
+SSTATEEN,sstateen0,0x10c,1
+SSTATEEN,sstateen1,0x10d,1
+SSTATEEN,sstateen2,0x10e,1
+SSTATEEN,sstateen3,0x10f,1
+SSTATEEN,mstateen0,0x30c,1
+SSTATEEN,mstateen1,0x30d,1
+SSTATEEN,mstateen2,0x30e,1
+SSTATEEN,mstateen3,0x30f,1
+AIA,siselect,0x150,1
+AIA,sireg,0x151,1
+AIA,stopei,0x15c,1
+AIA,stopi,0xdb0,1
+AIA,mtopei,0x35c,1
+AIA,miselect,0x350,1
+AIA,mireg,0x351,1
+AIA,mtopei,0x35c,1
+AIA,mtopi,0xfb0,1
+FP CSR,fflags,0x001,1
+FP CSR,frm,0x002,1
+FP CSR,fcsr,0x003,1

@@ -1,0 +1,119 @@
+# mrt privilege decoder
+.i 12
+.o 1
+.ilb op[31] op[30] op[29] op[28] op[27] op[26] op[25] op[24] op[23] op[22] op[21] op[20]
+.ob legal_csr_w
+#.type fr
+
+############## RV32 CSR
+#mstatus      0x300
+001100000000  1
+#mie          0x304
+001100000100  1
+#mtvec        0x305
+001100000101  1
+#mscratch     0x340
+001101000000  1
+#mepc         0x341
+001101000001  1
+#mcause       0x342
+001101000010  1
+#mtval        0x343
+001101000011  1
+#mip          0x344
+001101000100  1
+#mcounteren   0x306 fake support
+001100000110  1
+#mcountinhibit 0x320 fake support
+001100100000  1
+#menvcfg      0x30a fake support
+001100001010  1
+
+#sstatus      0x100
+000100000000 1
+#sie          0x104
+000100000100 1
+#stvec        0x105
+000100000101 1
+#sscratch     0x140
+000101000000 1
+#sepc         0x141
+000101000001 1
+#scause       0x142
+000101000010 1
+#stval        0x143
+000101000011 1
+#sip          0x144
+000101000100 1
+#satp         0x180
+000110000000 1
+#stimecmp     0x14d
+000101001101 1
+
+#scounteren   0x106 fake support
+000100000110 1
+#senvcfg      0x10a   fake support
+000100001010 1
+
+#mvendorid    0xf11
+111100010001 1
+#marchid      0xf12
+111100010010 1
+#mimpid       0xf13
+111100010011 1
+#mhartid      0xf14
+111100010100 1
+#misa         0x301
+001100000001 1
+#medeleg      0x302
+001100000010 1
+#mideleg      0x303
+001100000011 1
+#mtime        0xc01 custom
+110000000001 1
+#mtimecmp     0x7c0 custom
+011111000000 1
+
+#cycle        0xc00
+110000000000 1
+#time         0xc01
+110000000001 1
+
+################ SSTATEEN #################
+#sstateen0      0x10c
+000100001100 1
+#sstateen1      0x10d
+000100001101 1
+#sstateen2      0x10e
+000100001110 1
+#sstateen3      0x10f
+000100001111 1
+#mstateen0      0x30c
+001100001100 1
+#mstateen1      0x30d
+001100001101 1
+#mstateen2      0x30e
+001100001110 1
+#mstateen3      0x30f
+001100001111 1
+############### AIA ####################
+#siselect       0x150
+000101010000 1
+#sireg          0x151
+000101010001 1
+#stopei         0x15c
+000101011100 1
+#stopi          0xdb0
+110110110000 1
+#mtopei         0x35c
+001101011100 1
+#miselect       0x350
+001101010000 1
+#mireg          0x351
+001101010001 1
+#mtopei         0x35c
+001101011100 1
+#mtopi          0xfb0
+111110110000 1
+
+.e

@@ -1,0 +1,10 @@
+set name,inst name,mask,sysinstr_w
+RV32 Privilege Instruction,fence,-----------------000-----0001111,1
+RV32 Privilege Instruction,ecall,00000000000000000000000001110011,1
+RV32 Privilege Instruction,ebreak,00000000000100000000000001110011,1
+RV32 Privilege Instruction,mret,00110000001000000000000001110011,1
+RV32 Privilege Instruction,sret,00010000001000000000000001110011,1
+RV32 Privilege Instruction,wfi,00010000010100000000000001110011,1
+RV32 Privilege Instruction,sfence.vma,0001001----------000000001110011,1
+Zifencei Extension,fence.i,-----------------001-----0001111,1
+ilegal,noname,--------------------------------,0
