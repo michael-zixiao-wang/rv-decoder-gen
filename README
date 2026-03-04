@@ -1,0 +1,36 @@
+# rv-decoder-gen
+
+# 基本工作流：
+1. 利用开源项目riscv-opcode中的extention文件夹下的各种指令自编码模块(本项目中被复制到了opcode_ref文件夹下)初步产生指令控制信号和指令掩码；
+2. 将生成的.csv文件手工初步处理（使用visidata工具），随后拼接起来(使用mlr工具)；
+3. 将拼接生成的.csv文件移动到op-table中进行人工维护，如添加自定义控制信号等等；
+4. 将维护好的表格通过命令产生.pla文件；
+5. 利用.pla文件和abc工具产生译码模块的Verilog代码。
+
+# 阶段一常用命令
+##  各个子模块csv文件生成
+```bash
+python3 gen_mask.py rv_i # 针对非浮点指令集
+python3 gen_mask_fd.py rv_f # 针对浮点指令集
+```
+使用后就会生成对应子模块的掩码.csv文件
+
+## csv文件的初步处理
+
+vd工具的使用：
+```bash
+sudo apt install visidata
+vd <filename>.csv
+```
+
+csv文件的拼接,使用mlr工具：
+```bash
+mlr --csv cat rv_i.csv rv_f.csv > combined_fd.csv  
+```
+
+# 阶段二常用命令
+主要是使用vd工具人工添加或者减少控制信号
+
+# 阶段三常用命令
+
+脚本在写ing。
